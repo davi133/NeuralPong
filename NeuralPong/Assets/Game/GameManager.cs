@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
             _restatPlayersPositions();
             _ball.doFirstMovement();
         }
-        if (_ballRb.velocity.magnitude <1f && gameState == GameState.Ongoing)
+        if (_ballRb.linearVelocity.magnitude <1f && gameState == GameState.Ongoing)
         {
             //Debug.Log(_ball.GetComponent<Rigidbody2D>().velocity);
             //Debug.Log(_ball.GetComponent<Rigidbody2D>().velocity.magnitude);
@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
     }
     void _resetBall()
     {
-        _ball.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        _ball.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
         _ball.transform.position = _arena.position;
         _ball.transform.rotation = Quaternion.identity;
         _ball.GetComponent<Rigidbody2D>().angularVelocity = 0;

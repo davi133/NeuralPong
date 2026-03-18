@@ -94,8 +94,8 @@ public class AgentInputGatherer : inputGatherer
 
             inputs[4] = amIOnRight ? _gm.ball.transform.localPosition.x : -_gm.ball.transform.localPosition.x;
             inputs[5] = amIOnRight ? _gm.ball.transform.localPosition.y : -_gm.ball.transform.localPosition.y;
-            inputs[6] = amIOnRight ? _gm.ball.ballRb.velocity.x : -_gm.ball.ballRb.velocity.x;
-            inputs[7] = amIOnRight ? _gm.ball.ballRb.velocity.y : -_gm.ball.ballRb.velocity.y;
+            inputs[6] = amIOnRight ? _gm.ball.ballRb.linearVelocity.x : -_gm.ball.ballRb.linearVelocity.x;
+            inputs[7] = amIOnRight ? _gm.ball.ballRb.linearVelocity.y : -_gm.ball.ballRb.linearVelocity.y;
             inputs[8] = _gm.ball.ballRb.angularVelocity;
         }
         #endregion
@@ -109,8 +109,8 @@ public class AgentInputGatherer : inputGatherer
 
             //inputs[3] = amIOnRight ? _gm.ball.transform.localPosition.x : -_gm.ball.transform.localPosition.x;
             inputs[2] = amIOnRight ? _gm.ball.transform.localPosition.y : -_gm.ball.transform.localPosition.y;
-            inputs[3] = amIOnRight ? _gm.ball.ballRb.velocity.x : -_gm.ball.ballRb.velocity.x;
-            inputs[4] = amIOnRight ? _gm.ball.ballRb.velocity.y : -_gm.ball.ballRb.velocity.y;
+            inputs[3] = amIOnRight ? _gm.ball.ballRb.linearVelocity.x : -_gm.ball.ballRb.linearVelocity.x;
+            inputs[4] = amIOnRight ? _gm.ball.ballRb.linearVelocity.y : -_gm.ball.ballRb.linearVelocity.y;
             inputs[5] = _gm.ball.ballRb.angularVelocity;
         }
         #endregion

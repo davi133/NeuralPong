@@ -46,13 +46,13 @@ public class TheBall : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (ballRb.velocity.magnitude >= maxSpeed)
+        if (ballRb.linearVelocity.magnitude >= maxSpeed)
         {
-            ballRb.velocity = ballRb.velocity.normalized * maxSpeed;
+            ballRb.linearVelocity = ballRb.linearVelocity.normalized * maxSpeed;
         }
-        else if (ballRb.velocity.magnitude <= minSpeed)
+        else if (ballRb.linearVelocity.magnitude <= minSpeed)
         {
-            ballRb.velocity = ballRb.velocity.normalized * minSpeed;
+            ballRb.linearVelocity = ballRb.linearVelocity.normalized * minSpeed;
         }
         /*else if (ballRb.velocity.magnitude <= 0.01)
         {
@@ -126,11 +126,11 @@ public class TheBall : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("BALL HIT");
-        if (Mathf.Abs(ballRb.velocity.x) <= 2 && collision.gameObject.CompareTag("UB_border"))
+        if (Mathf.Abs(ballRb.linearVelocity.x) <= 2 && collision.gameObject.CompareTag("UB_border"))
         {
 
-            float was = Mathf.Abs(ballRb.velocity.x);
-            Vector2 aux = ballRb.velocity;
+            float was = Mathf.Abs(ballRb.linearVelocity.x);
+            Vector2 aux = ballRb.linearVelocity;
             float signx = Mathf.Sign(aux.x);
             aux.x = signx * 6f;
             //if (aux.x == 0) aux.x = Random.Range(0f, 1f) > 0.5f ? 6f : -6f;
@@ -138,9 +138,9 @@ public class TheBall : MonoBehaviour
             float signy = Mathf.Sign(aux.y);
             aux.y = signy * 4f;
 
-            ballRb.velocity = aux;
+            ballRb.linearVelocity = aux;
             //Debug.Log($"speed is now {ballRb.velocity.x}");
-            float now = Mathf.Abs(ballRb.velocity.x);
+            float now = Mathf.Abs(ballRb.linearVelocity.x);
             if (was > now)
             {
                 Debug.Log("oops");
