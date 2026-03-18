@@ -25,7 +25,7 @@ The training setup can be found in the scene `Assets/Scenes/TrainingScene_assist
 Every network plays against the best network of the previous generation. The winner gets to create the next generation and be it's boss. It is possible that the boss gets to maintain its throne.\
 The training setup can be found in the scene `Assets/Scenes/TrainingScene_boss.unity`.
 
-### The result
+## The result
 The best neural network was trained playing agains the bot until he got better than the it. Then it was trained using the Vs Boss strategy.\
 You can play agains it in the scene `Assets/Scenes/PlayScene.unity`.
 
